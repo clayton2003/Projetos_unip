@@ -1,0 +1,76 @@
+package Exercicios;
+
+public class Funcionarios {
+
+    private int numcracha;
+    private float salario;
+    private String cargo;
+
+    public Funcionarios() {
+    }
+
+    public Funcionarios(int nc, float s, String c) {
+        this.numcracha = nc;
+        this.salario = s;
+        this.cargo = c;
+    }
+
+    public int getNumcracha() {
+        return numcracha;
+    }
+
+    public void setNumcracha(int numcracha) {
+        this.numcracha = numcracha;
+    }
+
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+    
+    public float calculoAumento(float porcentagem){
+        float aumento = salario+(salario*porcentagem/100);
+        return (aumento);
+    }
+    public float calculoAumento(int tempo){
+        float aumento = salario+(tempo*150);
+        return (aumento);
+    }    
+}
+
+################PRINCIPAL###################
+
+package Exercicios;
+
+public class Teste {
+
+public static void main(String[] args){
+    Funcionarios func1 = new Funcionarios();
+    Funcionarios func2 = new Funcionarios(100, 2000.0f, "Vendendor");
+    
+    System.out.println("Funcionarios 1: ");
+    func1.setCargo("Gerente");
+    func1.setSalario(5000.0f);
+    System.out.println(func1.getCargo());
+    System.out.println(func1.getSalario());
+    //func1.calculoAumento(10f);
+    System.out.println(func1.calculoAumento(10f));
+    
+    System.out.println("Funcionarios 2: ");
+    System.out.println(func2.getCargo());
+    System.out.println(func2.getSalario());
+    //func2.calculoAumento(10f);
+    System.out.println(func2.calculoAumento(10f));
+}    
+}
